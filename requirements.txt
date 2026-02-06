@@ -1,0 +1,27 @@
+fastapi
+uvicorn[standard]
+
+# Data validation
+pydantic
+
+# Environment variables
+python-dotenv
+
+# CORS (React ↔ FastAPI)
+fastapi-cors
+
+# Database (choose what you need)
+sqlalchemy
+psycopg2-binary      # PostgreSQL
+
+# AI / ML (uncomment only what you use)
+numpy
+pandas
+opencv-python
+scikit-learn
+google-genai==0.3.0
+python-dotenv==1.0.0
+python-multipart==0.0.6
+
+
+requests

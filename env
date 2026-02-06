@@ -1,0 +1,2 @@
+DATABASE_URL=postgresql+asyncpg://postgres:aTHARV%40123@localhost:5432/innominds
+GEMINI_API_KEY=AIzaSyBWiL3joN0EgnywO6FxL2Yf_wEOYCskIns
