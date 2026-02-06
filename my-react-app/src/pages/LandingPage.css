@@ -1,0 +1,750 @@
+/* Warm Elegant "College Pe Charcha" Theme */
+:root {
+    --primary: #F97316;
+    /* Vibrant Orange */
+    --primary-light: #FDBA74;
+    /* Soft Orange */
+    --primary-dark: #C2410C;
+    /* Burnt Orange */
+
+    --secondary: #FB923C;
+    /* Secondary Orange */
+    --accent: #FDE047;
+    /* Yellow Accent */
+
+    --background: #FFFBF5;
+    /* Warm Cream Background */
+    --surface: #FFFFFF;
+    /* Pure White Surface */
+    --surface-alt: #FFF7ED;
+    /* Very light orange surface */
+
+    --text-primary: #0F172A;
+    /* Navy/Black (High Contrast) */
+    --text-secondary: #334155;
+    /* Slate */
+    --text-tertiary: #64748b;
+
+    --border: rgba(249, 115, 22, 0.15);
+    --border-light: rgba(249, 115, 22, 0.08);
+
+    --shadow-sm: 0 4px 6px -1px rgba(249, 115, 22, 0.1), 0 2px 4px -1px rgba(249, 115, 22, 0.06);
+    --shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.1), 0 4px 6px -2px rgba(249, 115, 22, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+
+    --gradient-primary: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+    --gradient-glow: radial-gradient(circle at center, rgba(254, 215, 170, 0.4) 0%, transparent 70%);
+}
+
+/* Base Styles & Grid Background */
+.landing-page {
+    background-color: var(--background);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+
+    /* Grid Pattern */
+    background-image:
+        linear-gradient(rgba(249, 115, 22, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes stickerPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Section Common */
+.section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    /* Soft Glow Top Right */
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(254, 215, 170, 0.4) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 2;
+    }
+
+    .hero-cta,
+    .quick-actions-bar {
+        justify-content: center;
+    }
+}
+
+/* Hero Typography */
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+}
+
+.title-line-1 {
+    display: block;
+    animation: slideUp 0.8s ease-out both;
+}
+
+.title-line-2 {
+    display: block;
+    animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.text-gradient {
+    color: var(--primary);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Buttons */
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    /* Soft rounded corners */
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(249, 115, 22, 0.25);
+    /* Colored shadow */
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--primary-dark);
+    box-shadow: 0 8px 12px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Quick Actions (Sticker Style) */
+.quick-actions-bar {
+    display: inline-flex;
+    gap: 2rem;
+    background: var(--surface);
+    padding: 1.5rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+    animation: slideUp 0.8s ease-out 0.6s both;
+    position: relative;
+}
+
+
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.action-item:hover {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.action-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--surface-alt);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all 0.2s ease;
+}
+
+.action-item:hover .action-icon {
+    background: var(--primary);
+    color: white;
+    transform: rotate(-10deg);
+}
+
+/* Animated Stats (Cards) */
+.animated-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    animation: slideUp 0.8s ease-out 0.8s both;
+}
+
+.stat-box {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-light);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+/* Hero Visual & Video */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scaleIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+    width: 100%;
+    height: 600px;
+    /* Increased height */
+    overflow: hidden;
+    /* To clip the logo */
+}
+
+.spline-robot {
+    width: 115% !important;
+    /* Slightly smaller to fit animations */
+    height: 115% !important;
+    /* Slightly smaller to fit animations */
+    transform: scale(1.05) translateX(15%);
+    /* Moved further right */
+    position: absolute;
+    bottom: -8%;
+    /* Keep logo pushed down */
+    right: -20%;
+    /* Moved further right to push logo and robot */
+}
+
+.word-reveal {
+    display: inline-block;
+}
+
+.word-reveal .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpWord 0.8s ease-out forwards;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--primary);
+    /* Fallback */
+}
+
+@keyframes slideUpWord {
+    from {
+        opacity: 0;
+        transform: translateY(20px) skewY(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) skewY(0deg);
+    }
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 650px;
+    /* Remove borders and shadows to let the robot blend in */
+    border-radius: 0;
+    box-shadow: none;
+    transform: scale(1.05);
+    /* Remove rotation for clean look */
+    transition: transform 0.5s ease;
+    background: transparent;
+    /* No white bg */
+    mix-blend-mode: multiply;
+    /* Keeps blending seamlessly */
+    position: relative;
+    z-index: 2;
+    /* Aggressive contrast/saturation to make robot prominent and bg transparent */
+    filter: contrast(1.25) brightness(1.15) saturate(1.3);
+    /* Widen mask to show checks behind video but fade hard edges */
+    -webkit-mask-image: radial-gradient(circle at center, black 75%, transparent 100%);
+    mask-image: radial-gradient(circle at center, black 75%, transparent 100%);
+}
+
+.hero-video:hover {
+    transform: scale(1.1);
+}
+
+/* Floating Elements (Parallax Stickers) */
+.floating-element {
+    position: absolute;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    color: var(--primary);
+    z-index: 3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+    top: 15%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+    top: 40%;
+    right: 5%;
+    animation-delay: 4s;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: inline-block;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 3px;
+    margin: 0.5rem auto 0;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Feature Cards (TiltCard) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tilt-card-wrapper {
+    /* Tilt logic is JS, but wrapper style */
+    perspective: 1000px;
+}
+
+.feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: 100%;
+    text-align: center;
+    transition: all 0.1s ease;
+    /* Faster transition for tilt */
+    box-shadow: var(--shadow-sm);
+    /* Ensure backface visibility for tilt */
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.feature-card .icon-wrapper {
+    width: 72px;
+    height: 72px;
+    background: var(--surface-alt);
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+    background: var(--primary);
+    color: white;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-tertiary);
+    line-height: 1.6;
+}
+
+/* Dark variant override (for "dark-variant" cards in JSX) */
+.feature-card.dark-variant {
+    /* Actually let's make them accent cards in this theme, not dark */
+    background: #FFF7ED;
+    /* Light Orange Surface */
+    border-color: #FED7AA;
+}
+
+/* CTA Section */
+.cta-section {
+    background: transparent;
+    /* Clean bg to show grid */
+}
+
+.cta-box {
+    background: var(--primary);
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    border-radius: 32px;
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 50px -10px rgba(249, 115, 22, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    /* Abstract circles overlay */
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    border: 40px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.cta-box h2 {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.cta-box .btn-primary {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box .btn-primary:hover {
+    background: #FFF7ED;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Particles/Blobs - Adjusted for Light Theme */
+.particles-container {
+    opacity: 0.6;
+    /* Softer particles */
+}
+
+.particle {
+    background: var(--primary);
+    /* Orange particles */
+}
+
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #FED7AA 0%, transparent 70%);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #FDE047 0%, transparent 70%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Typewriter Animation Fix */
+.typewriter-text {
+    border-right: none;
+    /* Removed clean line for smoother look */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 380px;
+    /* Fixed height required for flip */
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-front {
+    background: var(--surface);
+}
+
+.flip-card-back {
+    background: var(--surface-alt);
+    transform: rotateY(180deg);
+    border-color: var(--primary-light);
+}
+
+/* Ensure content inside fits nicely */
+.flip-card-front .icon-wrapper,
+.flip-card-back .icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.flip-card-front h3,
+.flip-card-back h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.flip-card-front p,
+.flip-card-back p {
+    color: var(--text-tertiary);
+    line-height: 1.6;
+}
+
+/* Specific styling for back to distinguish it */
+.flip-card-back .icon-wrapper {
+    background: var(--primary);
+    color: white;
+}
