@@ -1,331 +1,305 @@
- AI Career Guidance & College Recommendation System
-<div align="center">
-https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi
-https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
-https://img.shields.io/badge/Google%2520Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white
-https://img.shields.io/badge/SQLAlchemy-100000?style=for-the-badge&logo=sqlalchemy&logoColor=white
+🚀 AI Career Guidance & College Recommendation System
 
-An intelligent platform that provides personalized career guidance and college recommendations using AI-powered analytics
 
-</div>
-📋 Table of Contents
-✨ Features
 
-🛠️ Tech Stack
 
-📁 Project Structure
 
-🚀 Getting Started
 
-Prerequisites
 
-Backend Setup
 
-Frontend Setup
 
-🎯 Usage
 
-📊 API Documentation
+🎓 Intelligent AI Platform for Personalized Career & College Guidance
+📌 Overview
 
-🔧 Configuration
+AI Career Guidance & College Recommendation System is a full-stack intelligent platform that provides personalized career guidance, smart college recommendations, AI counseling, and study task management.
 
-📸 Screenshots
-
-🤝 Contributing
-
-📄 License
+Built using FastAPI, React, PostgreSQL, and Google Gemini AI, the system helps students make confident academic decisions using real data and AI-powered analytics.
 
 ✨ Features
 🎓 Career Guidance
-Personalized Roadmaps: AI-generated career paths based on student profile
 
-Multi-Stage Guidance: Tailored for School Students, Class 11-12, and Engineering Students
+Personalized AI-generated career roadmaps
 
-Strength Analysis: Identifies key strengths and suggests suitable domains
+Multi-stage guidance for:
 
-Success Probability: Estimates chances based on academic alignment
+School Students
 
-🏫 College Recommendation
-Smart Predictor: Filter colleges by percentile, location, and fees
+Class 11–12 Students
 
-Real Database: 200+ colleges with actual cutoff percentages
+Engineering Students
 
-AI Comparison: Compare two colleges with detailed analysis
+Strength and skill analysis
 
-Eligibility Check: Automatically shows eligible colleges based on percentile
+Domain suggestions
+
+Success probability estimation
+
+🏫 College Recommendation Engine
+
+Filter colleges by percentile, location, and fees
+
+200+ real college records with actual cutoff data
+
+Eligibility-based filtering
+
+AI-based college comparison
+
+Admission chance estimation
+
+Cost-benefit analysis
 
 💬 AI Counseling
-24/7 AI Counselor: Gemini-powered career counseling
 
-Emotional Support: Stress management and motivation
+24/7 Gemini-powered AI Counselor
 
-Exam Guidance: JEE, MHT-CET, NEET, CUET, and more
+Exam guidance (JEE, MHT-CET, NEET, CUET, etc.)
 
-Stream Selection: Science, Commerce, Arts guidance
+Stream selection assistance
 
-📝 Task Management
-Smart Task Keeper: Study planner with priority-based scheduling
+Stress management support
 
-Daily Notifications: Reminders for upcoming deadlines
+Career doubt clarification
 
-Progress Tracking: Visual progress bars and completion stats
+📝 Smart Task Keeper
 
-Motivational Quotes: Daily inspiration to stay on track
+Study planner with priorities
 
-🔐 User Management
-Secure Authentication: Password hashing with bcrypt
+Deadline management
 
-Profile Management: Personal details and preferences
+Progress tracking
 
-Session Management: JWT-based authentication
+Daily reminders
+
+Motivational quotes
+
+🔐 Secure User Management
+
+JWT-based authentication
+
+Password hashing using bcrypt
+
+Session management
+
+Profile management
 
 🛠️ Tech Stack
-Backend
-FastAPI - Modern Python web framework
+🔹 Backend
 
-SQLAlchemy - ORM for database operations
+FastAPI – Modern Python web framework
 
-PostgreSQL - Primary database
+SQLAlchemy – ORM for database operations
 
-Google Gemini API - AI-powered recommendations
+PostgreSQL – Primary relational database
 
-Python-dotenv - Environment management
+Google Gemini API – AI recommendation engine
 
-Async I/O - High-performance asynchronous operations
+Python-dotenv – Environment configuration
 
-Frontend
-React.js - Frontend library
+Async I/O – High-performance asynchronous operations
 
-React Router - Navigation and routing
+🔹 Frontend
 
-Framer Motion - Smooth animations
+React.js – UI library
 
-Lucide React - Icon library
+React Router – Routing
 
-CSS Modules - Component styling
+Framer Motion – Animations
 
-Recharts - Data visualization
+Lucide React – Icon library
 
-Database Models
-User - Authentication and user details
+CSS Modules – Component styling
 
-College - College information with cutoffs and fees
+Recharts – Data visualization
 
-Task - Task management with priorities and deadlines
+🗂️ Project Architecture
 
-Project Structure
+AI-Career-Guidance-System/
 
-├── BACKEND/
-│   ├── app/
-│   │   ├── auth.py              # Authentication endpoints
-│   │   ├── career_logic.py      # Career recommendation logic
-│   │   ├── counselor.py         # AI counseling endpoints
-│   │   ├── database.py          # Database configuration
-│   │   ├── main.py              # Main FastAPI app
-│   │   ├── models.py            # SQLAlchemy models
-│   │   ├── recommendation.py    # College recommendation engine
-│   │   ├── schemas.py           # Pydantic models
-│   │   ├── taskkeeper.py        # Task management API
-│   │   └── utils.py             # Utility functions
-│   ├── college_data.csv         # College database
-│   ├── load_csv.py              # Data loader script
-│   ├── requirements.txt         # Python dependencies
-│   └── .env.example             # Environment template
+BACKEND/
 │
-    REACT/
-    ├── src/
-    │   ├── assets/              # Static assets
-    │   ├── components/          # Reusable components
-    │   ├── pages/               # Page components
-    │   │   ├── Auth.jsx         # Login/Register
-    │   │   ├── Counseling.jsx   # College predictor
-    │   │   ├── counsellor-chat.jsx # AI chat
-    │   │   ├── Guidance.jsx     # Career guidance
-    │   │   ├── GuidanceResult.jsx # Results page
-    │   │   ├── LandingPage.jsx  # Home page
-    │   │   └── TaskKeeper.jsx   # Task manager
-    │   ├── services/
-    │   │      ├── guidance.js
-    │   │      ├──auth.js
-    │   ├── App.jsx              # Main app component
-    │   └── main.jsx             # Entry point
-    ├── index.html               # HTML template
-    └── package.json             # Frontend dependencies
+├── app/
+│ ├── auth.py
+│ ├── career_logic.py
+│ ├── counselor.py
+│ ├── database.py
+│ ├── main.py
+│ ├── models.py
+│ ├── recommendation.py
+│ ├── schemas.py
+│ ├── taskkeeper.py
+│ └── utils.py
+│
+├── college_data.csv
+├── load_csv.py
+├── requirements.txt
+└── .env.example
 
-Getting Started
+REACT/
+│
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── pages/
+│ │ ├── Auth.jsx
+│ │ ├── Counseling.jsx
+│ │ ├── counsellor-chat.jsx
+│ │ ├── Guidance.jsx
+│ │ ├── GuidanceResult.jsx
+│ │ ├── LandingPage.jsx
+│ │ └── TaskKeeper.jsx
+│ │
+│ ├── services/
+│ │ ├── auth.js
+│ │ └── guidance.js
+│ │
+│ ├── App.jsx
+│ └── main.jsx
+│
+├── index.html
+└── package.json
 
-Prerequisites
+🚀 Getting Started
+🔧 Prerequisites
+
 Python 3.9+
 
 Node.js 16+
 
 PostgreSQL 13+
 
-Google Gemini API key
+Google Gemini API Key
 
+🔹 Backend Setup
+1️⃣ Clone Repository
 
-Backend Setup
-Clone the repository
-
-bash
 git clone https://github.com/yourusername/innominds.git
+
 cd innominds/BACKEND
 
-Create virtual environment
-bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+2️⃣ Create Virtual Environment
 
-Install dependencies
-bash
+python -m venv venv
+
+Activate on Windows:
+venv\Scripts\activate
+
+Activate on Mac/Linux:
+source venv/bin/activate
+
+3️⃣ Install Dependencies
+
 pip install -r requirements.txt
 
-Configure environment variables
-bash
-cp .env.example .env
+4️⃣ Configure Environment Variables
 
-env
+Copy .env.example to .env and update:
+
 DATABASE_URL=postgresql+asyncpg://username:password@localhost:5432/innominds_db
 GEMINI_API_KEY=your_gemini_api_key_here
 SECRET_KEY=your_secret_key_here
 
-Set up PostgreSQL database
-sql
+5️⃣ Create Database
 
 CREATE DATABASE innominds_db;
-Load college data
 
-bash
+6️⃣ Load College Data
+
 python load_csv.py
-Run the backend server
 
-bash
+7️⃣ Run Backend
+
 uvicorn app.main:app --reload
 
+Backend runs at:
+http://localhost:8000
 
-Frontend Setup
+🔹 Frontend Setup
 
-Navigate to frontend directory
-
-bash
 cd ../REACT
-Install dependencies
 
-bash
 npm install
-Configure environment
 
-Create .env file:
+Create .env file and add:
 
-env
 VITE_API_URL=http://localhost:8000
 
-Run the development server
-bash
+Run:
+
 npm run dev
 
+Frontend runs at:
+http://localhost:5173
 
 🎯 Usage
-1. Registration & Login
-Create an account with email, name, and password
 
-Secure authentication with password hashing
+Register or Login
 
-2. Career Guidance
-Select your student type (School/Class 11-12/Engineering)
+Select student type for career guidance
 
-Answer personalized questions
+Enter exam percentile for college predictor
 
-Receive AI-generated career roadmap
+Compare colleges
 
-Get strength analysis and domain suggestions
+Chat with AI Counselor
 
-3. College Predictor
-Enter your exam percentile (MHT-CET/JEE)
+Manage study tasks
 
-Filter colleges by location and budget
+📊 API Endpoints
+Authentication
 
-View eligible colleges with cutoffs
+POST /auth/register
+POST /auth/login
 
-Get detailed college information
+Career Guidance
 
-4. Smart Compare
-Compare two colleges side-by-side
-
-AI analysis of pros and cons
-
-Admission chance estimation
-
-Cost-benefit analysis
-
-5. AI Counselor
-24/7 chat-based counseling
-
-Career doubts clarification
-
-Stress management advice
-
-Exam preparation tips
-
-6. Task Keeper
-Create study tasks with priorities
-
-Set deadlines and categories
-
-Receive notification reminders
-
-Track completion progress
-
-📊 API Documentation
-Authentication Endpoints
-POST /auth/register - User registration
-
-POST /auth/login - User login
-
-Career Guidance Endpoints
-POST /recommend/ - Get career recommendations
-
-POST /recommend/guidance - Get AI career guidance
-
-GET /recommend/cities - Get available cities
-
-POST /recommend/compare - Compare two colleges
+POST /recommend/
+POST /recommend/guidance
+GET /recommend/cities
+POST /recommend/compare
 
 College Filtering
-GET /recommend/colleges/filter - Filter colleges with parameters:
 
-min_percentile - Minimum cutoff percentile
+GET /recommend/colleges/filter
 
-max_percentile - Maximum cutoff percentile
+Parameters:
 
-city - City filter
+min_percentile
 
-min_fees - Minimum annual fees
+max_percentile
 
-max_fees - Maximum annual fees
+city
+
+min_fees
+
+max_fees
 
 AI Counseling
-POST /counselor/chat - Chat with AI counselor
+
+POST /counselor/chat
 
 Task Management
-GET /tasks/ - Get all tasks
 
-POST /tasks/ - Create new task
-
-PUT /tasks/{id}/toggle - Toggle task completion
-
-DELETE /tasks/{id} - Delete task
-
-GET /tasks/today - Get today's tasks
-
-GET /tasks/upcoming/{days} - Get upcoming tasks
+GET /tasks/
+POST /tasks/
+PUT /tasks/{id}/toggle
+DELETE /tasks/{id}
+GET /tasks/today
+GET /tasks/upcoming/{days}
 
 📸 Screenshots
+🏠 Landing Page
+<img width="100%" src="https://github.com/user-attachments/assets/a37266fb-d52f-4134-837c-f3563efbddc4" />
+🏫 College Predictor
+<img width="100%" src="https://github.com/user-attachments/assets/e8129d9e-d679-4d7e-811c-c8b4f7f457ed" />
+🤝 Contributing
 
-Landing Page - Modern hero section with animated stats
-<img width="1881" height="913" alt="image" src="https://github.com/user-attachments/assets/a37266fb-d52f-4134-837c-f3563efbddc4" />
+Fork the repository
 
-College Predictor - Filter panel with real-time results
-<img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/e8129d9e-d679-4d7e-811c-c8b4f7f457ed" />
+Create your feature branch
 
+Commit changes
+
+Push to branch
+
+Open a Pull Request
